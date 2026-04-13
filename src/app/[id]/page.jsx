@@ -9,7 +9,7 @@ import Link from 'next/link';
 const FriendsDetails = async ({ params }) => {
     const { id } = await params;
     const friends = friendData.find(friend => friend.id === parseInt(id));
-    const { name, tags, picture, status, days_since_contact, bio, email ,goal,next_due_date } = friends
+    const { name, tags, picture, status, days_since_contact, bio, email ,goal,next_due_date } = friends ;
     return (
         <div className='min-h-screen pt-10 bg-[#f8fafc] px-4'>
 
@@ -98,7 +98,7 @@ const FriendsDetails = async ({ params }) => {
                             <div className='flex justify-between items-center'>
                               <h1 className="text-xl font-semibold text-green-800">Quick Check-In</h1>
                             </div>
-                           <Button/>
+                           <Button friends={friends} />
 
                             </div>
                     </div>
