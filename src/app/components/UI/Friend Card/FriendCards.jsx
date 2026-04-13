@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const FriendCards = ({friend}) => {
@@ -7,7 +8,8 @@ const FriendCards = ({friend}) => {
 
     return (
         <div>
-            <div className="card bg-base-100  shadow-lg rounded-2xl hover:scale-105 transition duration-100 hover:shadow-green-200">
+            <Link href={`/${friend.id}`}>
+             <div className="card bg-base-100  shadow-lg rounded-2xl hover:scale-105 transition duration-100 hover:shadow-green-200">
                 <figure className="px-10 pt-10">
 
                     <div className="avatar">
@@ -20,7 +22,7 @@ const FriendCards = ({friend}) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{name}</h2>
-                    <p>{days_since_contact}d ago on-track </p>
+                    <p>{days_since_contact}d ago  </p>
                     <div className='flex gap-3'>
                         {
                           tags.map((tag,index)=>
@@ -34,6 +36,8 @@ const FriendCards = ({friend}) => {
                     </div>
                 </div>
             </div>
+            </Link>
+
         </div>
     );
 };

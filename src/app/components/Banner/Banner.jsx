@@ -2,10 +2,10 @@
 
 const Banner = () => {
     return (
-        <div className="py-10">
+        <div className="pt-10">
             <div className="text-center space-y-5">
-                <h1 className="text-3xl lg:text-6xl font-semibold">Friends to keep close in your life</h1>
-                <p className="text-gray-500">Your personal shelf of meaningful connections. Browse, tend, and nurture the <br />
+                <h1 className="text-3xl lg:text-6xl font-bold mx-3">Friends to keep close in your life</h1>
+                <p className="text-gray-500 mx-2">Your personal shelf of meaningful connections. Browse, tend, and nurture the <br />
                     relationships that matter most.</p>
                     <button className="btn bg-green-800 text-white">+ Add a friend</button>
             </div>
