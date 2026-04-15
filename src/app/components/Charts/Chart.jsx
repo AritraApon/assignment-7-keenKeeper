@@ -17,10 +17,17 @@ const data = [
   { name: 'Video', value:videoCount, fill: '#37a163' },
   ,
 ];
-
+ const totalData = callCount + textCount + videoCount ;
 
     return (
-        <div className="flex justify-center">
+      <div>
+        {
+          totalData == 0 ? <div>
+            <div className="text-center py-10 border-2 border-dashed text-3xl border-gray-200 rounded-xl">
+      <p className="text-gray-400">No activity data available to show chart</p>
+    </div>
+          </div> :
+<div className="flex justify-center">
          <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
       <Pie
         data={data}
@@ -35,10 +42,13 @@ const data = [
         isAnimationActive={isAnimationActive}
       />
       <Tooltip/>
-      
+
       <Legend/>
     </PieChart>
         </div>
+        }
+      </div>
+
     );
 };
 

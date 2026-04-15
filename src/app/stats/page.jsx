@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Chart from "../components/Charts/Chart";
 
-
+ export const metadata = {
+  title: "Activity Stats | KeenKeeper",
+  description: "Visualize your social interactions. Analyze how much time you spend on calls, texts, and video chats with your friends.",
+};
 const StatsPage = () => {
     return (
         <div className="py-10 bg-[#f8fafc]">

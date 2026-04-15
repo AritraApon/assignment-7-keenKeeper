@@ -2,6 +2,10 @@ import Link from "next/link";
 import TimeLine from "../components/TimeLine/TimeLine";
 import FilterButton from "../components/FilterButton/FilterButton";
 
+export const metadata = {
+  title: "Interaction Timeline | KeenKeeper",
+  description: "A chronological history of your connections. Check when you last called or texted your friends.",
+};
 
 const TimeLinePage = () => {
     return (
