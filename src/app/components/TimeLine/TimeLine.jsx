@@ -5,16 +5,20 @@ import { useContext } from "react";
 
 
 const TimeLine = () => {
-    const { timeLine, setTimeLine } = useContext(FriendContext)
+    const { timeLine, setTimeLine ,filteredData } = useContext(FriendContext)
+
+
+
+
     return (
         <div className="mt-10 w-11/12 lg:w-8/12 mx-auto">
             <div className="space-y-3">
-                { timeLine.length === 0 ? <div><div className="text-center py-10 border-2 border-dashed text-3xl border-gray-200 rounded-xl">
+                { filteredData.length === 0 ? <div><div className="text-center py-10 border-2 border-dashed text-3xl border-gray-200 rounded-xl">
       <p className="text-gray-400">No calls or messages yet.</p>
     </div></div> :
-                    timeLine.map((items, index) => <div key={index}>
-
-                        <div className="flex items-center gap-3  p-2 bg-gray-200 rounded-xl shadow px-4 ">
+                    filteredData.map((items, index) => <div key={index}>
+                          <div className="flex justify-between bg-gray-200 rounded-xl shadow px-4 p-2">
+                             <div className="flex items-center gap-3    ">
                             <div>
                                 {items.activityType === 'call' &&
                               <Image src='/call.png' alt="call" width={30} height={30} />
@@ -29,6 +33,9 @@ const TimeLine = () => {
                             </div>
 
                         </div>
+                        
+                          </div>
+
 
                     </div>)
                 }
