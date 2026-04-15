@@ -5,10 +5,14 @@ import { RiDeleteBin5Line, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { FiArchive } from 'react-icons/fi';
 import Button from '../components/Button/Button';
 import Link from 'next/link';
+import FriendNotFound from '../components/friendnotfound/FriendNotFound';
 
 const FriendsDetails = async ({ params }) => {
     const { id } = await params;
     const friends = friendData.find(friend => friend.id === parseInt(id));
+    if (!friends) {
+  return <FriendNotFound/>;
+}
     const { name, tags, picture, status, days_since_contact, bio, email ,goal,next_due_date } = friends ;
     return (
         <div className='min-h-screen pt-10 bg-[#f8fafc] px-4'>
